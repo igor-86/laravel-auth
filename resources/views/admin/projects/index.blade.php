@@ -20,7 +20,8 @@
                                 <td>{{ $project->created_at }}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <a class="btn btn-success" href="">
+                                        <a class="btn btn-success"
+                                            href="{{ route('admin.projects.show', $project->slug) }}">
                                             View
                                         </a>
                                     </div>
