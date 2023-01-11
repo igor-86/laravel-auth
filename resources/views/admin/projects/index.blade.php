@@ -31,6 +31,8 @@
                                             href="{{ route('admin.projects.show', $project->slug) }}">
                                             View
                                         </a>
+                                        <a class="btn btn-warning ms-2"
+                                            href="{{ route('admin.projects.edit', $project->slug) }}">Edit</a>
                                     </div>
                                 </td>
                             </tr>
