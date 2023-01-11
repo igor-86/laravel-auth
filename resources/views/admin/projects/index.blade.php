@@ -6,6 +6,12 @@
         <a class="btn btn-success pos-ab" href="{{ route('admin.projects.create') }}">New</a>
         <div class="row justify-content-center mt-5">
             <div class="col-10">
+                {{-- Messaggio di avviso creazione progetto --}}
+                @if (session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
                 <table class="table">
                     <thead>
                         <tr>
