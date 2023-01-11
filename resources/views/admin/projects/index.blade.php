@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        <h2 class="text-center mt-2">Lista dei miei progetti</h2>
-        <div class="row justify-content-center mt-4">
+    <div class="container position-relative">
+        <h2 class="text-center mt-4">Lista dei miei progetti</h2>
+        <a class="btn btn-success pos-ab" href="{{ route('admin.projects.create') }}">New</a>
+        <div class="row justify-content-center mt-5">
             <div class="col-10">
                 <table class="table">
                     <thead>
