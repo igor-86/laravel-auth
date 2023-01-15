@@ -11,6 +11,15 @@
                         <p class="ms-4 color-date align-items-center">{{ $project->created_at }}</p>
                     </div>
                 </div>
+                <div class="show-image mt-3">
+                    @if ($project->cover_image)
+                        <img src="{{ asset('storage/' . $project->cover_image) }}" alt="">
+                    @else
+                        <div class="show-not-image">
+                            Image not yet!
+                        </div>
+                    @endif
+                </div>
                 <div>
                     <p class="mt-3">{{ $project->article }}</p>
                 </div>

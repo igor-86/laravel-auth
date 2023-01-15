@@ -18,6 +18,7 @@
                             <tr>
                                 <th scope="col">Titolo</th>
                                 <th scope="col">Data di creazione</th>
+                                <th scope="col">Immagine</th>
                                 <th scope="col">Azioni</th>
                             </tr>
                         </thead>
@@ -26,6 +27,16 @@
                                 <tr>
                                     <th scope="row">{{ $project->title }}</th>
                                     <td>{{ $project->created_at }}</td>
+                                    <td>
+                                        <div class="cover-img">
+                                            @if ($project->cover_image)
+                                                <img src="{{ asset('storage/' . $project->cover_image) }}"
+                                                    alt="{{ $project->title }}">
+                                            @else
+                                                <div class="not-image text-center">Not image!</div>
+                                            @endif
+                                        </div>
+                                    </td>
                                     <td>
                                         <div class="d-flex">
                                             <a class="btn btn-success"
