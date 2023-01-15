@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class=" text-center mt-4">Modifica {{ $project->title }}</h2>
+        <h2 class=" text-center mt-4">Modifica <strong class="color-date">{{ $project->title }}</strong></h2>
         <div class="row justify-content-center">
             <div class="col-10">
                 <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST">

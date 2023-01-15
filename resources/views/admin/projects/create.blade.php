@@ -5,7 +5,7 @@
         <h2 class="text-center mt-4">Inserisci un nuovo progetto</h2>
         <div class="row justify-content-center">
             <div class="col-10">
-                <form action="{{ route('admin.projects.store') }}" method="POST">
+                <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mb-3">
                         <label for="title">Titolo</label>
@@ -16,6 +16,10 @@
                                 {{ $message }}
                             </div>
                         @enderror
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="cover_image">Immagine</label>
+                        <input type="file" name="cover_image" id="cover_image" class="form-control">
                     </div>
                     <div class="form-group mb-3">
                         <label for="article">Descrizione</label>
