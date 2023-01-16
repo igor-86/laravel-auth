@@ -91,6 +91,7 @@ class ProjectController extends Controller
     {
         $form_data = $request->validated();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
+
         if ($request->hasFile('cover_image')) {
             if ($project->cover_image) {
                 Storage::delete($project->cover_image);
@@ -113,6 +114,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if ($project->cover_image) {
+            Storage::delete($project->cover_image);
+        }
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', "$project->title è stato cancellato");
     }
